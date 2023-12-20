@@ -1,0 +1,7 @@
+RewriteEngine on
+
+AuthType Basic
+AuthName "Wymagane logowanie"
+#AuthUserFile /home/domain/directory/.htpasswd
+AuthUserFile C:\xampp\htdocs\rewrite\unauthorised\files\.htpasswd
+Require valid-user

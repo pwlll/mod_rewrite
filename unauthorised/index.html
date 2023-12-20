@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pobieranie</title>
+</head>
+<body>
+  <nav>
+	<a href="../index.html">&laquo; Lista zadań</a>
+	<a href="index.html"><b>Strona główna</b></a>
+	<a href="about-us.html">O nas</a>
+	<a href="offer.html">Oferta</a>
+	<a href="contact.html">Kontakt</a>
+	<a href="files">Pobieranie</a>
+	<a href="media">Test ENV</a>
+  </nav>
+  <h1>Opis</h1>
+  <p>Ogranicz dostęp do dwóch katalogów przy pomocy dwóch różnych technik:</p>
+  <ol>
+	<li>Uniemożliwienie listowania zawartości katalogu <code>media</code> (odnośnik <code>Test ENV</code>)</li>
+	<li>Ustawienie autoryzacji login-hasło dla katalogu <code>files</code> (odnośnik <code>Pobieranie</code>)</li>
+  </ol>
+  <h1>Zadanie 1</h1>
+  <ol>
+	<li>Dodaj regułę <code>Options -Indexes</code> do pliku dla katalogu <code>media</code></li>
+	<li>Zweryfikuj działanie reguły odwiedzając katalog <code>media</code> poprzez kliknięcie w odnośnik <code>Test ENV</code></li>
+  </ol>
+  <h1>Zadanie 2</h1>
+  <ol>
+    <li>W katalogu <code>files</code> utwórz plik <code>.htaccess</code></li>
+    <li><p>W pliku konfiguracyjnym dodaj reguły:</p>
+	  <pre><code>AuthType Basic
+AuthName "Wymagane logowanie"
+AuthUserFile /home/domain/directory/.htpasswd
+Require valid-user</code></pre>
+	  <p>Pamiętaj, by wskazać właściwą ścieżkę do pliku <code>.htpasswd</code></p>
+    </li>
+    <li><p>W katalogu głównym <code>.</code> utwórz plik <code>.htpasswd</code></p></li>
+	<li><p>Wybierz nazwę użytkownika, którego nazwa to Twoje inicjały z małych liter</p></li>
+    <li><p>Ustal hasło na <code>Student123!</code> oraz zakoduj je przy użyciu metody <code>bcrypt</code>* dla Apache 2.4</p>
+		<p>*Twój OS: Linux. Użyj polecenia: <code>htpasswd -c /home/domain/directory/.htpasswd UŻYTKOWNIK</code></p>
+		<p>*Twój OS: nie-linux. Użyj serwisu generującego wpis dla pliku <code>.htpasswd</code> <a href="https://hostingcanada.org/htpasswd-generator/">LINK</a></p>
+    </li>
+    <li><p>W pliku <code>.htpasswd</code> umieść wiersz zawierający strukturę (wygenerowaną w kroku #5): <code>użytkownik:hasło_zakodowane</code></p></li>
+    <li>Zweryfikuj działanie reguły odwiedzając katalog <code>files</code> poprzez kliknięcie w odnośnik <code>Pobieranie</code></li>
+  </ol>
+</body>
+</html>

@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteBase /rewrite/redirect/
+RewriteRule ^(.*)files(.*)$ $1media$2 [R=301,L]

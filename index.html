@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista zadań mod_rewrite</title>
+</head>
+<body>
+  <h1>mod_rewrite - Lista zadań</h1>
+  <p>Warsztat utrwalający zagadnienia związane z <code>mod_rewrite</code> oraz <code>.htaccess</code></p>
+  <h2>Wytyczne:</h2>
+  <ul>
+	<li>Do każdego zadania załącz Zrzut ekranu potwierdzajcy pomyślne wykonanie.</li>
+	<li>Na zakończenie spakuj cały katalog z zadaniami i zrzutami ekranu do archiwum ZIP, nazwij <code>KLASA-Nazwisko</code> i prześlij prowadzącemu.</li>
+  </ul>
+  <h2>Lista zadań:</h2>
+  <ol>
+	<li><a href="http2s/index.php">Przekierowanie HTTP->HTTPS</a></li>
+	<li><a href="redirect/index.php">Przekierowanie pod nowy adres URL</a></li>
+	<li><a href="site-ext/index.html">ukrycie rozszerzeń plików</a></li>
+	<li><a href="seo-friendly/index.php">przyjazny SEO (czysty) adres URL</a></li>
+	<li><a href="unauthorised/index.html">ograniczanie dostępu</a></li>
+	<li><a href="z-errors/index.html">strony błędów, np. 404</a> (zadanie na ocenę 6)</li>
+  </ol>
+  <h2>Mini dokumentacja</h2>
+  <hr/>
+  <p>Dla pełnej dokumentacji w języku angielskim <a href="https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html">zobacz</a></p>
+  <h2>Dyrektywy (polecenia) mod_rewrite:</h2>
+  <ol>
+	<li><code>RewriteEngine</code> - włączenie silnika przepisywania adresu URL</li>
+	<li><code>RewriteCond</code> - warunek do spełnienia, by reguła mogła zadziałać. Można stosować kilka, jedna po drugiej (działają jak: IF (A && B){})</li>
+	<li><code>RewriteRule</code> - ostateczna reguła do wykonania</li>
+  </ol>
+  <h2>"Przełączniki" dla poleceń Rewrite -Cond i -Rule:</h2>
+  <pre style="padding-left: 1.5rem;"><code>!   - negacja
+-d  - katalogi (directory)
+-f  - pliki (file)
+$1  - pierwszy parametr
+$2  - drugi parametr, itd</code></pre>
+  <h2>Flagi dla Rewrite Rule (opcjonalne parametry):</h2>
+  <ul>
+	<li><p><code>QSA</code> - Query String Append, czyli dodanie ciągu `query string` z oryginalnego adresu URL rządania do ciągu `query string` stworzonego w docelowej regule wyjścia</p></li>
+	<li><p><code>NC</code> - Non-case sensitive, czyli "nieczułe" na wielkości liter w adresie URL (zastosowanie np. dla kluczy, niedobre dla kodów i identyfikatorów)</p></li>
+	<li><p><code>R</code> - Redirect, czyli wymuszenie przekierowania, zgodnie z kodem HTTP, np. 301 lub 302</p></li>
+	<li><p><code>L</code> - Last rule, czyli ostatnia reguła do zastosowania po spełnieniu powyższych warunków</p></li>
+  </ul>
+  <h2>Dyrektywy RewriteCond</h2>
+  <p>Składnia wywołania dyrektywy (zmiennej): <code>%{DYREKTYWA}</code> jest odpowiednikiem w PHP: <code>$zmienna</code></p>
+  <p>Na <b style="color: red;">czerwono</b> zaznaczono popularniejsze (częściej używane) dyrektywy.</p>
+  <table>
+          
+            <tbody><tr>
+              <th>HTTP headers:</th> <th>connection &amp; request:</th> <th>
+            </th></tr>
+
+            <tr>
+              <td>
+                 HTTP_ACCEPT<br>
+                 HTTP_COOKIE<br>
+                 HTTP_FORWARDED<br>
+                 <b style="color: red;">HTTP_HOST</b><br>
+                 HTTP_PROXY_CONNECTION<br>
+                 <b style="color: red;">HTTP_REFERER</b><br>
+                 HTTP_USER_AGENT<br>
+              </td>
+
+              <td>
+                 AUTH_TYPE<br>
+                 CONN_REMOTE_ADDR<br>
+                 CONTEXT_PREFIX<br>
+                 CONTEXT_DOCUMENT_ROOT<br>
+                 IPV6<br>
+                 PATH_INFO<br>
+                 <b style="color: red;">QUERY_STRING</b><br>
+                 REMOTE_ADDR<br>
+                 REMOTE_HOST<br>
+                 REMOTE_IDENT<br>
+                 REMOTE_PORT<br>
+                 REMOTE_USER<br>
+                 REQUEST_METHOD<br>
+                 SCRIPT_FILENAME<br>
+              </td>
+
+              <td>
+            </td></tr>
+
+            <tr>
+              <th>server internals:</th> <th>date and time:</th> <th>specials:</th>
+            </tr>
+
+            <tr>
+              <td>
+                 DOCUMENT_ROOT<br>
+                 SCRIPT_GROUP<br>
+                 SCRIPT_USER<br>
+                 SERVER_ADDR<br>
+                 SERVER_ADMIN<br>
+                 SERVER_NAME<br>
+                 <b style="color: red;">SERVER_PORT</b><br>
+                 <b style="color: red;">SERVER_PROTOCOL</b><br>
+                 SERVER_SOFTWARE<br>
+              </td>
+
+              <td>
+                 TIME_YEAR<br>
+                 TIME_MON<br>
+                 TIME_DAY<br>
+                 TIME_HOUR<br>
+                 TIME_MIN<br>
+                 TIME_SEC<br>
+                 TIME_WDAY<br>
+                 TIME<br>
+              </td>
+
+              <td>
+                 API_VERSION<br>
+                 CONN_REMOTE_ADDR<br>
+                 <b style="color: red;">HTTPS</b><br>
+                 IS_SUBREQ<br>
+                 REMOTE_ADDR<br>
+                 <b style="color: red;">REQUEST_FILENAME</b><br>
+                 REQUEST_SCHEME<br>
+                 REQUEST_URI<br>
+                 THE_REQUEST<br>
+              </td>
+            </tr>
+          </tbody></table>
+</body>
+</html>

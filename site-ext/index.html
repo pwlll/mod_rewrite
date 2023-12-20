@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Strona główna</title>
+</head>
+<body>
+  <nav>
+	<a href="../index">&laquo; Lista zadań</a>
+	<a href="index"><b>Strona główna</b></a>
+	<a href="about-us">O nas</a>
+	<a href="offer">Oferta</a>
+	<a href="contact">Kontakt</a>
+	<a href="test">Test ENV</a>
+  </nav>
+  <h1>Pusta strona główna</h1>
+  <p>Witaj na stronie testowej do ukrycia rozszerzeń plików przy użyciu przepisywania adresów URL modułu Apache <code>mod_rewrite</code></p>
+  <h2>Zadanie</h2>
+  <ol>
+	<li><p>Utwórz plik reguł htaccess</p></li>
+	<li><p>Uzupełnij plik regułami (dostarczono tylko <b>fragment</b> kodu, resztę uzupełnij!):</p>
+	  <p><i>Osadź warunek: jeżeli żądany adres URL to nie katalog</i></p>
+	  <p><i>Osadź warunek: jeżeli żądany adres URL jest plikiem z rozszerzeniem <code>.html</code></i></p>
+	  <pre><code>RewriteRule ^(.*)$ $1.html</code></pre>
+	</li>
+	<li><p>Zmień wartość atrybutów HREF w odnośnikach, by pozbyć się rozszerzeń plików (<code>.html</code>)</p></li>
+	<li><p>Przetestuj rozwiązanie</p></li>
+  </ol>
+</body>
+</html>

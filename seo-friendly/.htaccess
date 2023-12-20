@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /rewrite/seo-friendly/
+
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?mod=$1&id=$2&view=$3 [L,QSA]
